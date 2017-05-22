@@ -15,7 +15,8 @@ class Skills extends React.Component {
     }
     handleScroll(event) {
         let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        let scrollTop = event.srcElement.body.scrollTop + windowHeight;
+        let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+        let scrollTop = scroll + windowHeight;
         let position = document.getElementsByClassName('company')[0].offsetTop;
         let offsetInner = document.getElementsByClassName('skills')[0].offsetTop;
         if (scrollTop > (position+offsetInner)) {

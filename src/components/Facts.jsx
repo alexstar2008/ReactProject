@@ -14,7 +14,8 @@ class Facts extends React.Component {
     }
     handleScroll(event){
         let windowHeight =  window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
-        let scrollTop = event.srcElement.body.scrollTop + windowHeight;
+        let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+        let scrollTop = scroll + windowHeight;
         let position = document.getElementsByClassName('facts')[0].offsetTop;
         let offsetInner = document.getElementsByClassName('facts_item_amount')[0].offsetTop/2;
         if(scrollTop>(position+offsetInner)){
